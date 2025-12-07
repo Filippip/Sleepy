@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Awareness Campaign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Aileron:wght@400;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Work Sans', sans-serif;
+      background: #e3e2de;
+      color: #1351aa;
+    }
+
+    header {
+      background: #1351aa;
+      color: #e3e2de;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Aileron', sans-serif;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .slogan {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-top: 10px;
+      background: #e3e2de;
+      color: #1351aa;
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 12px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .checker {
+      background: #1351aa20;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: none;
+      background: #1351aa;
+      color: #e3e2de;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .posters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .posters-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 3px 7px #00000030;
+    }
+
+    .solutions div {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #1351aa;
+      color: #e3e2de;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Sleepy</h1>
+  <div class="slogan">Better SLEEP. Better YOU.</div>
+</header>
+
+<section id="sleep-check" class="checker">
+  <h2>Check Your Sleep Quality</h2>
+
+  <label>Age:
+    <input type="number" id="age" />
+  </label>
+
+  <label>Gender:
+    <select id="gender">
+      <option value="man">Man</option>
+      <option value="woman">Woman</option>
+      <option value="different">Different</option>
+    </select>
+  </label>
+
+  <label>Hours Slept:
+    <input type="number" id="hours" />
+  </label>
+
+  <button onclick="checkSleep()">Check</button>
+  <p id="result"></p>
+</section>
+
+<section id="about">
+  <h2>About the Problem</h2>
+  <p>
+    Teenagers today are sleeping far less than their bodies and minds truly need. Late-night scrolling, academic pressure,
+    and inconsistent routines slowly drain focus, mood, and overall energy.
+    <br><br>
+    Good sleep is not optional — it is key to growth, creativity, mental health, motivation, and emotional balance.
+    Our mission is to raise awareness and help teens build healthier habits for a brighter, more productive everyday life.
+  </p>
+</section>
+
+<section class="posts">
+  <h2>Posters</h2>
+  <div class="posters-grid">
+    <img src="screen1.png" alt="Poster 1">
+    <img src="screen2.png" alt="Poster 2">
+    <img src="screen3.png" alt="Poster 3">
+    <img src="screen4.png" alt="Poster 4">
+  </div>
+</section>
+
+<section id="solutions" class="solutions">
+  <h2>Solutions</h2>
+  <div>• Keep a consistent sleep schedule</div>
+  <div>• Limit screen time before bed</div>
+  <div>• Create a relaxing bedtime routine</div>
+  <div>• Make your bedroom dark, quiet, and cool</div>
+  <div>• Track your sleep to understand what works best</div>
+</section>
+
+<footer>
+  <p><strong>Kontakt:</strong></p>
+  <p>Sleepy Awareness Team</p>
+  <p>Adresa: Hlavná 1, Bratislava</p>
+  <p>Email: sleepy@team.com</p>
+  <p>Instagram: @sleepy_campaign</p>
+</footer>
+
+<script>
+function checkSleep() {
+  const hrs = Number(document.getElementById('hours').value);
+  const gender = document.getElementById('gender').value;
+
+  let label = '';
+  if (gender === 'man') label = 'boy';
+  else if (gender === 'woman') label = 'girl';
+  else label = 'idk what';
+
+  let msg = '';
+
+  if (hrs > 8) msg = '🌙✨ good ' + label;
+  else if (hrs >= 7) msg = '😌 not bad';
+  else msg = '⚠️😴 bad ' + label;
+
+  document.getElementById('result').textContent = msg;
+}
+</script>
+
+</body>
+</html>
