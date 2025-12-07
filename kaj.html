@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Awareness Campaign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Aileron:wght@400;700&family=Work+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Work Sans', sans-serif;
+      background: #e3e2de;
+      color: #1351aa;
+    }
+    header {
+      background: #1351aa;
+      color: #e3e2de;
+      padding: 30px;
+      text-align: center;
+    }
+    h1, h2, h3 {
+      font-family: 'Aileron', sans-serif;
+      margin: 20px 0 10px 0;
+    }
+    .slogan {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .solutions div {
+      margin-bottom: 15px;
+    }
+    .checker {
+      background: #1351aa20;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #1351aa;
+      color: #e3e2de;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .posts {
+      margin-top: 40px;
+      background: #1351aa20;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    footer {
+      background: #1351aa;
+      color: #e3e2de;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .footer-inputs input {
+      width: 90%;
+      max-width: 400px;
+      margin: 6px auto;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sleepy</h1>
+  <div class="slogan">Better SLEEP. Better YOU.</div>
+</header>
+
+<section id="sleep-check" class="checker">
+  <h2>Check Your Sleep Quality</h2>
+  <label>Age:
+    <input type="number" id="age" />
+  </label>
+  <label>Gender:
+    <select id="gender">
+      <option value="man">Man</option>
+      <option value="woman">Woman</option>
+    </select>
+  </label>
+  <label>Hours Slept:
+    <input type="number" id="hours" />
+  </label>
+  <button onclick="checkSleep()">Check</button>
+  <p id="result"></p>
+</section>
+
+<section id="about">
+  <h2>About the Problem</h2>
+  <p>
+    Teenagers today sleep far less than their bodies and minds need. Late-night scrolling, stress from school,
+    and irregular routines slowly drain energy, focus, and overall wellbeing. Quality sleep fuels creativity,
+    growth, mood, and performance — without it, everything feels harder.
+    <br><br>
+    Our mission is to help you understand how powerful sleep truly is, and inspire you to build healthier
+    habits that make every day feel easier, brighter, and more balanced.
+  </p>
+</section>
+
+<section class="posts">
+  <h2>Posters</h2>
+  <div id="post1"><img src="Snímka obrazovky 2025-12-07 124635.png" alt=""></div>
+  <div id="post2" style="margin-top:20px;"><img src="Snímka obrazovky 2025-12-07 124642.png" alt=""></div>
+</section>
+
+
+
+<section id="solutions" class="solutions">
+  <h2>Solutions</h2>
+  <div><strong>3 April 2026:</strong> Opening and Showcase the artwork from the artists</div>
+  <div><strong>4 April 2026:</strong> Art and Painting Workshop</div>
+  <div><strong>5 April 2026:</strong> Art Auction and Closing</div>
+</section>
+
+
+
+
+<footer>
+ 
+  <div class="footer-info">
+    <p><strong>Kontakt:</strong></p>
+    <p>Sleepy Awareness Team</p>
+    <p>Adresa: Hlavná 1, Bratislava</p>
+    <p>Email: sleepy@team.com</p>
+    <p>Instagram: @sleepy_campaign</p>
+     <p>All rights reserved by Sleepy © </p>
+  </div>
+</footer>
+
+<script>
+function checkSleep() {
+  const hrs = Number(document.getElementById('hours').value);
+  const gender = document.getElementById('gender').value;
+  const label = gender === 'woman' ? 'girl' : 'boy';
+
+  let msg = '';
+  if (hrs > 8) msg = 'good ' + label;
+  else if (hrs >= 7) msg = 'not bad';
+  else msg = 'bad ' + label;
+
+  document.getElementById('result').textContent = msg;
+}
+</script>
+
+</body>
+</html>
