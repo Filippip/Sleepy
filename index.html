@@ -81,13 +81,13 @@
 
     .posters-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
+      grid-template-columns: repeat(4, 1fr);  margin-top: 20px;
     }
 
     .posters-grid img {
       width: 100%;
+      height: 300px;
+      object-fit: cover;
       border-radius: 10px;
       box-shadow: 0px 3px 7px #00000030;
     }
@@ -184,7 +184,7 @@ function checkSleep() {
   let label = '';
   if (gender === 'man') label = 'boy';
   else if (gender === 'woman') label = 'girl';
-  else label = 'idk what';
+  else label = 'idk';
 
   let msg = '';
 
